@@ -70,7 +70,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4BCF1DB7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{D631BA47-AAA8-40C0-A7D7-54CAEA16CAEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus.UnitTest", "EventBus.UnitTest\EventBus.UnitTest.csproj", "{BE861815-61B5-4F3F-9CE8-E96EFF927B72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.UnitTest", "EventBus.UnitTest\EventBus.UnitTest.csproj", "{BE861815-61B5-4F3F-9CE8-E96EFF927B72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
