@@ -24,6 +24,8 @@ builder.Services.Configure<CatalogSettings>(configuration.GetSection("CatalogSet
 builder.Services.ConfigureDbContext(configuration);
 //builder.Services.ConfigureConsul(configuration);
 
+builder.Services.ConfigureConsul(configuration);
+
 var app = builder.Build();
 
 // Database migration and seeding
@@ -37,10 +39,11 @@ using (var scope = app.Services.CreateScope())
         var logger = services.GetRequiredService<ILogger<CatalogContextSeed>>();
 
         // Apply database migrations
-        context.Database.Migrate();
+        await context.Database.MigrateAsync();
 
         // Seed data if necessary
-        CatalogContextSeed.SeedAsync(context, env, logger).Wait();
+        var seed = services.GetRequiredService<CatalogContextSeed>();
+        await seed.SeedAsync(context, env, logger);
     }
     catch (Exception ex)
     {
@@ -73,6 +76,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Consul registration
-//app.RegisterWithConsul(app.Lifetime, configuration);
+app.RegisterWithConsul(app.Lifetime, configuration);
 
 app.Run();
