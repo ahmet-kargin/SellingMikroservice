@@ -8,7 +8,7 @@ namespace CatalogService.Api.Infrastructure.Context;
 
 public class CatalogContextSeed
 {
-    public async Task SeedAsync(CatalogContext context, IWebHostEnvironment env, ILogger<CatalogContextSeed> logger)
+    public static async Task SeedAsync(CatalogContext context, IWebHostEnvironment env, ILogger<CatalogContextSeed> logger)
     {
         var policy = Policy.Handle<SqlException>().
             WaitAndRetryAsync(
