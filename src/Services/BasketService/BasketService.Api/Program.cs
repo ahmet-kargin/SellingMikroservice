@@ -1,3 +1,6 @@
+using BasketService.Api.Extensions;
+using Consul;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -19,7 +22,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.RegisterWithConsul(Configuration);
 app.MapControllers();
 
 app.Run();
