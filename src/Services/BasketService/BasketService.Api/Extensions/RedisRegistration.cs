@@ -1,4 +1,6 @@
-﻿namespace BasketService.Api.Extensions;
+﻿using StackExchange.Redis;
+
+namespace BasketService.Api.Extensions;
 
 public static class RedisRegistration
 {

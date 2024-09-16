@@ -59,7 +59,7 @@ public class RedisBasketRepository : IBasketRepository
         return await GetBasketAsync(basket.BuyerId);
     }
 
-    private IServer GetServer()
+    private StackExchange.Redis.IServer GetServer()
     {
         var endpoint = _redis.GetEndPoints();
         return _redis.GetServer(endpoint.First());
