@@ -19,6 +19,8 @@ public class RedisBasketRepository : IBasketRepository
         _database = redis.GetDatabase();
     }
 
+   
+
     public async Task<bool> DeleteBasketAsync(string id)
     {
         return await _database.KeyDeleteAsync(id);
