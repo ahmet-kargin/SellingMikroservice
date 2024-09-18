@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using OrderService.Application.Features.Queries.ViewModels;
 using OrderService.Application.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;

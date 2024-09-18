@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using OrderService.Application.Features.Queries.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
